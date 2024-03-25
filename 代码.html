@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>甲状腺治疗建议</title>
+    <script>
+        function generateRecommendation() {
+            const surgery = document.getElementById("surgery").value;
+            const radioactiveIodine = document.getElementById("radioactive-iodine").value;
+            const risk = document.getElementById("risk").value;
+            const Tg = document.getElementById("Tg").value;
+            const TSH = document.getElementById("TSH").value;
+
+            let recommendation = "";
+
+            if (surgery === 'single' && radioactiveIodine === 'no' && risk === 'none' && Tg === 'not-tested' && TSH === '0.1-to-0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === 'single' && radioactiveIodine === 'no' && risk === 'none' && Tg === '0.2-to-30' && TSH === '0.1-to-0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === 'single' && radioactiveIodine === 'no' && risk === 'none' && Tg === 'greater-than-30' && TSH === '0.1-to-0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === 'single' && radioactiveIodine === 'no' && risk === 'none' && Tg === 'not-tested' && TSH === '0.5-to-2') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === 'single' && radioactiveIodine === 'no' && risk === 'none' && Tg === '0.2-to-30' && TSH === '0.5-to-2') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === 'single' && radioactiveIodine === 'no' && risk === 'none' && Tg === 'greater-than-30' && TSH === '0.5-to-2') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。因Tg水平较高，请注意复查甲状腺超声结果。";        
+            } else if (surgery === 'single' && radioactiveIodine === 'no' && risk === 'none' && Tg === 'not-tested' && TSH === '0.1-to-0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === 'single' && radioactiveIodine === 'no' && risk === 'none' && Tg === '0.2-to-30' && TSH === '0.1-to-0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === 'single' && radioactiveIodine === 'no' && risk === 'none' && Tg === 'greater-than-30' && TSH === '0.1-to-0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === 'single' && radioactiveIodine === 'no' && risk === 'none' && Tg === 'not-tested' && TSH === '0.5-to-2') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === 'single' && radioactiveIodine === 'no' && risk === 'none' && Tg === '0.2-to-30' && TSH === '0.5-to-2') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === 'single' && radioactiveIodine === 'no' && risk === 'none' && Tg === 'greater-than-30' && TSH === '0.5-to-2') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === 'single' && radioactiveIodine === 'no' && risk === 'none' && Tg === 'not-tested' && TSH === '2-to-10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === 'single' && radioactiveIodine === 'no' && risk === 'none' && Tg === 'not-tested' && TSH === 'greater-than-10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === 'single' && radioactiveIodine === 'no' && risk === 'none' && Tg === '0.2-to-30' && TSH === 'greater-than-10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '无' && Tg >= 30 && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg < 30 && TSH < 0.5) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg >= 30 && TSH >= 0.5 && TSH <= 2) {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg >= 0.2 && Tg < 30 && TSH >= 0.5 && TSH <= 2) {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg >= 30 && TSH >= 0.5 && TSH <= 2) {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg < 30 && TSH > 2 && TSH <= 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg >= 0.2 && Tg < 30 && TSH > 2 && TSH <= 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg >= 30 && TSH > 2 && TSH <= 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg >= 0.2 && Tg < 30 && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg >= 30 && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg >= 30 && TSH < 0.5) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && 0.2 <= Tg && Tg < 30 && TSH < 0.5) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && TSH < 0.5) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && 0.2 <= Tg && Tg < 30 && TSH < 0.5) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && !TSH && 0.5 <= TSH && TSH <= 2) {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && 0.2 <= Tg && Tg < 30 && 0.5 <= TSH && TSH <= 2) {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg >= 30 && 0.5 <= TSH && TSH <= 2) {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && !TSH && 2 < TSH && TSH <= 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && 0.2 <= Tg && Tg < 30 && 2 < TSH && TSH <= 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg >= 30 && TSH > 2 && TSH <= 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === 'not-tested' && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg >= 0.2 && Tg < 30 && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg >= 30 && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg >= 30 && TSH < 0.5) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg >= 0.2 && Tg < 30 && TSH < 0.5) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg >= 30 && TSH < 0.5) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === 'not-tested' && TSH >= 0.5 && TSH <= 2) {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg >= 0.2 && Tg < 30 && TSH >= 0.5 && TSH <= 2) {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg >= 30 && TSH >= 0.5 && TSH <= 2) {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === 'not-tested' && TSH > 2 && TSH <= 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '本次未检测' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '0.2≤Tg＜30' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '≥30' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '本次未检测' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '0.2≤Tg＜30' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '≥30' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg === '本次未检测' && TSH === 'TSH＜0.1') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg === 'Tg＜0.2' && TSH === 'TSH＜0.1') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg === '0.2≤Tg＜30' && TSH === 'TSH＜0.1') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。若您的Tg＞5ng/ml，需注意复查甲状腺超声。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg === '≥30' && TSH === 'TSH＜0.1') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg === '本次未检测' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg === 'Tg＜0.2' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg === '0.2≤Tg＜30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg === '≥30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg === '本次未检测' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg === 'Tg＜0.2' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg === '0.2≤Tg＜30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg === '≥30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg === '本次未检测' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg === 'Tg＜0.2' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg >= 0.2 && Tg < 30 && TSH > 2 && TSH <= 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg >= 30 && TSH > 2 && TSH <= 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg < 0.2 && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg < 0.2 && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg >= 0.2 && Tg < 30 && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '无' && Tg >= 30 && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && TSH < 0.1) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg < 0.2 && TSH < 0.1) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg >= 0.2 && Tg < 30 && TSH < 0.1) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。若您的Tg＞5ng/ml，需注意复查甲状腺超声。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg >= 30 && TSH < 0.1) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '本次未检测' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === 'Tg＜0.2' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '0.2≤Tg＜30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '≥30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '本次未检测' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === 'Tg＜0.2' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '0.2≤Tg＜30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '≥30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '本次未检测' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === 'Tg＜0.2' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '0.2≤Tg＜30' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5. 您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '≥30' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5. 您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '本次未检测' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5. 您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === 'Tg＜0.2' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5. 您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '0.2≤Tg＜30' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5. 您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '≥30' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5. 您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '本次未检测' && TSH === 'TSH＜0.1') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5. 您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === 'Tg＜0.2' && TSH === 'TSH＜0.1') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5. 您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '0.2≤Tg＜30' && TSH === 'TSH＜0.1') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5. 您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。 若您的Tg＞5ng/ml，需注意复查甲状腺超声。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '≥30' && TSH === 'TSH＜0.1') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5. 您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。 因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '本次未检测' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === 'Tg＜0.2' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '0.2≤Tg＜30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '≥30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '本次未检测' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === 'Tg＜0.2' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '0.2≤Tg＜30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '≥30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '本次未检测' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === 'Tg＜0.2' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg >= 0.2 && Tg < 30 && TSH > 2 && TSH <= 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg >= 30 && TSH > 2 && TSH <= 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg < 0.2 && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg >= 0.2 && Tg < 30 && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg >= 30 && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && TSH < 0.1) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg < 0.2 && TSH < 0.1) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg >= 0.2 && Tg < 30 && TSH < 0.1) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。若您的Tg＞5ng/ml，需注意复查甲状腺超声。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg >= 30 && TSH < 0.1) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '本次未检测' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === 'Tg＜0.2' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '0.2≤Tg＜30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '≥30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '本次未检测' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === 'Tg＜0.2' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '0.2≤Tg＜30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '≥30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '本次未检测' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === 'Tg＜0.2' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '0.2≤Tg＜30' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '≥30' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '本次未检测' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === 'Tg＜0.2' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '0.2≤Tg＜30' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '否' && risk === '高风险 (心房颤动)' && Tg === '≥30' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === '本次未检测' && TSH === 'TSH＜0.1') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === 'Tg＜0.2' && TSH === 'TSH＜0.1') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === '0.2≤Tg＜30' && TSH === 'TSH＜0.1') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。若您的Tg＞5ng/ml，需注意复查甲状腺超声。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === '≥30' && TSH === 'TSH＜0.1') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === '本次未检测' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === 'Tg＜0.2' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === '0.2≤Tg＜30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === '≥30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === '本次未检测' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === 'Tg＜0.2' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === '0.2≤Tg＜30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === '≥30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === '本次未检测' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === 'Tg＜0.2' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === '0.2≤Tg＜30' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === '≥30' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === '本次未检测' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1。您可在目前的用药基础上平均每日增加优甲乐1片，一个月后复查甲状腺功能。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === 'Tg＜0.2' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1。您可在目前的用药基础上平均每日增加优甲乐1片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === '0.2≤Tg＜30' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1。您可在目前的用药基础上平均每日增加优甲乐1片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '无' && Tg === '≥30' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1。您可在目前的用药基础上平均每日增加优甲乐1片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '本次未检测' && TSH === 'TSH＜0.1') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === 'Tg＜0.2' && TSH === 'TSH＜0.1') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '0.2≤Tg＜30' && TSH === 'TSH＜0.1') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。若您的Tg＞5ng/ml，需注意复查甲状腺超声。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '≥30' && TSH === 'TSH＜0.1') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '本次未检测' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === 'Tg＜0.2' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '0.2≤Tg＜30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '≥30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '本次未检测' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === 'Tg＜0.2' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '0.2≤Tg＜30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '≥30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '本次未检测' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === 'Tg＜0.2' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '0.2≤Tg＜30' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '≥30' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '本次未检测' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1片，一个月后复查甲状腺功能。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === 'Tg＜0.2' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '0.2≤Tg＜30' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '低风险（如绝经、心动过速、骨量减少）' && Tg === '≥30' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '本次未检测' && TSH === 'TSH＜0.1') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === 'Tg＜0.2' && TSH === 'TSH＜0.1') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '0.2≤Tg＜30' && TSH === 'TSH＜0.1') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。若您的Tg＞5ng/ml，需注意复查甲状腺超声。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '≥30' && TSH === 'TSH＜0.1') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '本次未检测' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === 'Tg＜0.2' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '0.2≤Tg＜30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '≥30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '本次未检测' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === 'Tg＜0.2' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '0.2≤Tg＜30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '≥30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '本次未检测' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === 'Tg＜0.2' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '0.2≤Tg＜30' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '≥30' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '本次未检测' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1片，一个月后复查甲状腺功能。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === 'Tg＜0.2' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '0.2≤Tg＜30' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '中风险 (年龄 > 60 岁、骨质疏松)' && Tg === '≥30' && TSH === 'TSH＞10') {
+                recommendation = "您的最佳TSH抑制目标范围为＜0.1.您可在目前的用药基础上平均每日增加优甲乐1片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg === '本次未检测' && TSH === 'TSH＜0.1') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5.您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg === 'Tg＜0.2' && TSH === 'TSH＜0.1') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5.您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg === '0.2≤Tg＜30' && TSH === 'TSH＜0.1') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5.您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。若您的Tg＞5ng/ml，需注意复查甲状腺超声。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg === '≥30' && TSH === 'TSH＜0.1') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5.您可在目前的用药基础上平均每日减少优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg === '本次未检测' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg === 'Tg＜0.2' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg === '0.2≤Tg＜30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg === '≥30' && TSH === '0.1≤TSH＜0.5') {
+                recommendation = "您的TSH控制目标理想。请维持目前用药剂量。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg === '本次未检测' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg === 'Tg＜0.2' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg === '0.2≤Tg＜30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，需注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg === '≥30' && TSH === '0.5≤TSH≤2') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg === '本次未检测' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。请注意复查甲状腺球蛋白（Tg）及甲状腺球蛋白抗体（TgAb）";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg === 'Tg＜0.2' && TSH === '2＜TSH≤10') {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg >= 0.2 && Tg < 30 && TSH > 2 && TSH <= 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，请注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg >= 30 && TSH > 2 && TSH <= 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg === '本次未检测' && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg < 0.2 && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg >= 0.2 && Tg < 30 && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。若甲状腺球蛋白（Tg）＞5ng/ml，请注意观察超声复查结果。";
+            } else if (surgery === '双侧切除' && radioactiveIodine === '是' && risk === '高风险 (心房颤动)' && Tg >= 30 && TSH > 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.1-0.5。您可在目前的用药基础上平均每日增加优甲乐半片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '无' && Tg >= 0.2 && Tg < 30 && TSH > 2 && TSH <= 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。";
+            } else if (surgery === '单侧切除' && radioactiveIodine === '否' && risk === '无' && Tg >= 30 && TSH > 2 && TSH <= 10) {
+                recommendation = "您的最佳TSH抑制目标范围为0.5-2.0。您可在目前的用药基础上平均每日增加优甲乐1/4片，一个月后复查甲状腺功能。因Tg水平较高，请注意复查甲状腺超声结果。";
+}
+
+            // 将建议信息显示在页面上
+            document.getElementById("recommendation").innerHTML = recommendation;
+        }
+    </script>
+</head>
+<body>
+    <h1>甲状腺治疗建议</h1>
+    <p>手术切除范围：
+        <select id="surgery">
+            <option value="single">单侧切除</option>
+            <option value="double">双侧切除</option>
+        </select>
+    </p>
+    <p>是否行碘131治疗：
+        <select id="radioactive-iodine">
+            <option value="yes">是</option>
+            <option value="no">否</option>
+        </select>
+    </p>
+    <p>不良反应风险：
+        <select id="risk">
+            <option value="none">无</option>
+            <option value="low">低风险（如绝经、心动过速、骨量减少）</option>
+            <option value="medium">中风险 (年龄 > 60 岁、骨质疏松)</option>
+            <option value="high">高风险 (心房颤动)</option>
+        </select>
+    </p>
+    <p>甲状腺球蛋白（Tg）值：
+        <select id="Tg">
+            <option value="not-tested">本次未检测</option>
+            <option value="less-than-0.2">Tg＜0.2</option>
+            <option value="0.2-to-30">0.2≤Tg＜30</option>
+            <option value="greater-than-30">≥30</option>
+        </select>
+    </p>
+    <p>促甲状腺激素（TSH）值：
+        <select id="TSH">
+            <option value="less-than-0.1">TSH＜0.1</option>
+            <option value="0.1-to-0.5">0.1≤TSH＜0.5</option>
+            <option value="0.5-to-2">0.5≤TSH≤2</option>
+            <option value="2-to-10">2＜TSH≤10</option>
+            <option value="greater-than-10">TSH＞10</option>
+        </select>
+    </p>
+    <button onclick="generateRecommendation()">推荐意见</button>
+    <div id="recommendation"></div>
+</body>
+</html>
